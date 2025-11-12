@@ -1,0 +1,42 @@
+<div class="flex h-screen overflow-hidden">
+  <!-- Sidebar -->
+  <aside
+    *ngIf="isSidebarOpen$ | async"
+    class="hidden lg:block"
+  >
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Mobile Sidebar Overlay -->
+  <div
+    *ngIf="isSidebarOpen$ | async"
+    class="fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden"
+    (click)="toggleSidebar()"
+  ></div>
+
+  <!-- Mobile Sidebar -->
+  <aside
+    *ngIf="isSidebarOpen$ | async"
+    class="fixed inset-y-0 left-0 z-50 lg:hidden"
+  >
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex flex-1 flex-col overflow-hidden">
+    <!-- Header -->
+    <app-header></app-header>
+
+    <!-- Content -->
+    <main class="flex-1 overflow-y-auto bg-gray-100 p-4 dark:bg-gray-900 md:p-6">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- Footer (opcional) -->
+    <footer class="border-t border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+      <p class="text-center text-sm text-gray-600 dark:text-gray-400">
+        Mi Portafolio © {{ currentYear }}
+      </p>
+    </footer>
+  </div>
+</div>
