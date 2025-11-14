@@ -1,19 +1,20 @@
-<header>
+<header class="flex h-12 items-center justify-between border-b border-gray-200 bg-white px-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:px-6">
     <!-- toggle sidebar Button -->
     <button
         mat-icon-button
-        (click)="toggleSidebar()">
-    <mat-icon>menu</mat-icon>
+        (click)="toggleSidebar()"
+        class="text-gray-600 dark:text-gray-300">
+    <mat-icon class="text-white">menu</mat-icon>
     </button>
 
 
     <!-- right side actions -->
-     <div>
-        <button mat-icon-button>
-            <mat-icon>account_circle</mat-icon>
+     <div class="flex items-center gap-2">
+        <button mat-icon-button class="text-white dark:text-white">
+            <mat-icon class="text-white">notifications</mat-icon>
         </button>
-        <button mat-icon-button>
-            <mat-icon>settings</mat-icon>
+        <button mat-icon-button class="text-gray-600 dark:text-gray-300">
+            <mat-icon class="text-white">settings</mat-icon>
         </button>
      </div>
 </header>

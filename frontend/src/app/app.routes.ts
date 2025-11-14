@@ -15,11 +15,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modules/user/dashboard/dashboard').then(m => m.Dashboard)
       },
-      // 👇 Aquí puedes agregar más rutas hijas (productos, contacto, etc.)
-      // {
-      //   path: 'productos',
-      //   loadComponent: () => import('./modules/user/products/products').then(m => m.Products)
-      // },
+
     ]
   },
   {

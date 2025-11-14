@@ -16,7 +16,7 @@ export class Sidebar {
   user={ 
     name:"xeyt",
     email:"Usuario@demo.com",
-    avatar: "https://i.pravatar.cc/150?img=3"
+    avatar: "https://i.pravatar.cc/150?img=2"
   }
 
   constructor(private navigationService: Navigation) {}
