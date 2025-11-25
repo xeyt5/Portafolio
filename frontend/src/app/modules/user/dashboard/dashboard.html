@@ -1,13 +1,58 @@
 <section class="flex justify-center p-6">
-  <div class="max-w-3xl rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Sobre mí</h2>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-      Soy un creador de contenido y desarrollador en crecimiento especializado en 
-      <span class="text-blue-500">Linux, tecnología</span>, con experiencia trabajando en entornos web usando 
-      <span class="text-blue-400">Angular, Django y TailwindCSS</span>. Me caracterizo por explicar conceptos complejos 
-      de forma simple y visual, creando contenido educativo para miles de personas. Actualmente fortaleciendo mis 
-      fundamentos de programación y desarrollo full-stack, combino habilidades técnicas con comunicación efectiva 
-      para crear experiencias claras y atractivas.
-    </p>
+  <div class="max-w-5xl rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-6 items-center">
+    
+    <!-- Recuadro para la foto -->
+    <img 
+      [src]="user.avatar"
+      alt="Foto de usuario"
+      class="w-40 h-40 rounded-full object-cover border border-gray-300 dark:border-gray-600 shadow"
+    >
+
+    <!-- Texto -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Sobre mí</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+        Soy un creador de contenido y desarrollador en crecimiento especializado en 
+        <span class="text-blue-500">Linux, tecnología</span>, con experiencia trabajando en entornos web usando 
+        <span class="text-blue-400">Angular, Django y TailwindCSS</span>. Me caracterizo por explicar conceptos complejos 
+        de forma simple y visual, creando contenido educativo para miles de personas. Actualmente fortaleciendo mis 
+        fundamentos de programación y desarrollo full-stack, combino habilidades técnicas con comunicación efectiva 
+        para crear experiencias claras y atractivas.
+      </p>
+    </div>
+
   </div>
+</section>
+
+<section class="flex justify-center p-6 mt-10">
+  <div class="max-w-5xl w-full">
+    <h2 class="font-bold text-2xl text-gray-900 dark:text-white mb-6">
+      mis proyectos destacados
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Proyecto 1</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus sed, rerum quos eligendi iste voluptas. Magnam incidunt iste autem, tenetur nulla sint odit omnis debitis sequi, officia qui aperiam commodi earum voluptatibus.</p>
+        
+      </div>
+      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Proyecto 2</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores asperiores et eum excepturi, molestiae, quae doloremque tempore qui nemo assumenda illum doloribus debitis culpa iste labore est dignissimos vero quam expedita cumque.</p>
+      </div>
+      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Proyecto 3</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, autem molestias mollitia odio eaque labore. Necessitatibus, enim! Vel aspernatur neque quos illum nihil alias ratione tempora fugiat architecto pariatur magnam, eius dolor.</p>
+      </div>
+    </div>
+    <div class="flex justify-center mt-8">
+      <a
+        routerLink="/projects"
+        class="inline-block bg-white text-blue-800 font-bold px-6 py-3 rounded-full shadow hover:bg-gray-300 transition cursor-pointer"
+      >Mis proyectos</a>
+
+    </div>
+
+  </div>
+
 </section>

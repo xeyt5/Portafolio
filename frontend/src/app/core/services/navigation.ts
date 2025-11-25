@@ -24,6 +24,13 @@ export class Navigation {
       icon: 'dashboard',
       link: '/dashboard'
     },
+    {
+      id: 'projects',
+      title: 'Projects',
+      type: 'link',
+      icon: 'folder',
+      link: '/projects'
+    }
   ];
   private isOpenSubject = new BehaviorSubject<boolean>(false);
   isOpen$ = this.isOpenSubject.asObservable();
