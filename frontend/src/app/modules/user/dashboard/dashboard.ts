@@ -13,5 +13,6 @@ export class Dashboard {
     name:"xeyt",
     avatar: "https://i.pravatar.cc/150?img=2" 
   }
+  
 
 }
