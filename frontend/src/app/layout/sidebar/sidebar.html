@@ -1,19 +1,21 @@
-<div class="flex h-full w-60 flex-col bg-gray-800 text-white border border-gray-700">
+<div class="flex h-full w-60 flex-col bg-slate-50 dark:bg-[#0f172a] text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700">
   <!-- Logo -->
-  <div class="flex items-center justify-center border-b border-gray-800 p-2">
-    <h2 class="text-2xl font-bold text-blue-500">xexeyt</h2>
+  <div class="flex items-center justify-center border-b border-slate-200 dark:border-slate-700 p-2">
+    <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+      xexeyt
+    </h2>
   </div>
 
   <!-- User Info -->
-  <div class="flex flex-col items-center border-b border-gray-800 p-6">
-    <div class="mb-3 h-24 w-24 overflow-hidden rounded-full bg-gray-700">
+  <div class="flex flex-col items-center border-b border-slate-200 dark:border-slate-700 p-6">
+    <div class="mb-3 h-24 w-24 overflow-hidden rounded-full bg-slate-200 dark:bg-[#1e293b]">
       <img [src]="user.avatar" [alt]="user.name" class="h-full w-full object-cover" />
     </div>
     <div class="w-full text-center">
-      <div class="truncate font-medium" [title]="user.name">
+      <div class="truncate font-medium text-slate-800 dark:text-slate-100" [title]="user.name">
         {{ user.name }}
       </div>
-      <div class="truncate text-sm text-gray-400" [title]="user.email">
+      <div class="truncate text-sm text-slate-500 dark:text-slate-400" [title]="user.email">
         {{ user.email }}
       </div>
     </div>
@@ -22,26 +24,20 @@
   <!-- Navigation Items -->
   <nav class="flex-1 overflow-y-auto p-4">
     <div class="space-y-1">
-    <a
-      *ngFor="let item of navigationItems"
-      [routerLink]="item.link"
-      routerLinkActive="bg-blue-600 text-white"
-      [routerLinkActiveOptions]="{ exact: item.id === 'dashboard' }"
-      class="flex items-center gap-3 rounded-lg px-4 py-3 text-gray-300 transition-colors hover:bg-gray-400 hover:text-white"
-    >
+      <a
+        *ngFor="let item of navigationItems"
+        [routerLink]="item.link"
+        routerLinkActive="bg-blue-600 text-white shadow"
+        [routerLinkActiveOptions]="{ exact: item.id === 'dashboard' }"
+        class="flex items-center gap-3 rounded-xl px-4 py-3
+               text-slate-600 dark:text-slate-300
+               transition-colors
+               hover:bg-slate-100 hover:text-slate-900
+               dark:bg-[#1e293b] dark:hover:bg-[#334155] dark:hover:text-white"
+      >
         <mat-icon>{{ item.icon }}</mat-icon>
         <span>{{ item.title }}</span>
       </a>
     </div>
   </nav>
-
-  <!-- Logout Button -->
-  <!--<div class="border-t border-gray-800 p-4">
-    <button
-      class="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-gray-300 transition-colors hover:bg-red-600 hover:text-white"
-    >
-      <mat-icon>logout</mat-icon>
-      <span>Cerrar sesión</span>
-    </button>
-  </div>-->
 </div>
