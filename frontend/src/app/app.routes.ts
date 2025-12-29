@@ -15,11 +15,16 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modules/user/dashboard/dashboard').then(m => m.Dashboard)
       },
+      {
+        path: 'proyectos',
+        loadComponent: () =>
+          import('./modules/user/proyectos/proyectos').then(m => m.Proyectos)
+      },
 
     ]
   },
   {
     path: '**',
-    redirectTo: 'inicio' // redirección en caso de ruta no encontrada
+    redirectTo: 'inicio' 
   }
 ];

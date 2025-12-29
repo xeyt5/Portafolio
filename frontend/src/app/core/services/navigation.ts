@@ -25,11 +25,11 @@ export class Navigation {
       link: '/dashboard'
     },
     {
-      id: 'projects',
-      title: 'Projects',
+      id: 'proyectos',
+      title: 'proyectos',
       type: 'link',
       icon: 'folder',
-      link: '/projects'
+      link: '/proyectos'
     }
   ];
   private isOpenSubject = new BehaviorSubject<boolean>(false);

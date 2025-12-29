@@ -10,11 +10,10 @@
 
     <!-- right side actions -->
      <div class="flex items-center gap-2">
-        <button mat-icon-button class="text-white dark:text-white">
-            <mat-icon class="text-white">notifications</mat-icon>
-        </button>
-        <button mat-icon-button class="text-gray-600 dark:text-gray-300">
-            <mat-icon class="text-white">settings</mat-icon>
+        <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>
+            {{ isDarkMode ? 'dark_mode' : 'light_mode' }}
+        </mat-icon>
         </button>
      </div>
 </header>
