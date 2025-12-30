@@ -1,1 +1,14 @@
-<p>proyectos works!</p>
+<h1>Mis Proyectos</h1>
+
+@for (project of projects; track project) {
+  <div>
+    <h2 class="text-black dark:text-white">{{ project.title }}</h2>
+    <p class="text-black dark:text-white">{{ project.description }}</p>
+
+    <a [href]="project.link" target="_blank" class="text-black dark:text-white">
+      Ver proyecto
+    </a>
+
+    <hr />
+  </div>
+}
