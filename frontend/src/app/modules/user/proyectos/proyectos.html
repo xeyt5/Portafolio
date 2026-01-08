@@ -1,7 +1,8 @@
 <h1 class="py-3 font-semibold text-black dark:text-white text-2xl">Mis Proyectos</h1>
-  <div class="grid gap-6 mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+<div class="max-w-6xl mx-auto px-4">
+  <div class="grid gap-6 mb-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
   @for (project of projects; track project) {
-    <div class="bg-gray-200 dark:bg-zinc-800 rounded-2xl transition p-6 flex flex-col justify-between duration-300 hover:scale-[1.02] hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500 shadow-lg dark:shadows-zinc-900/60 hover:shadow-2xl hover:translate-y-1">
+    <div class="bg-gray-200 dark:bg-gray-800 rounded-2xl transition p-6 flex flex-col justify-between duration-300 hover:scale-[1.02] hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500 shadow-lg dark:shadows-zinc-900/60 hover:shadow-2xl hover:translate-y-1">
       <div>
         <img
         [src]="project.img"
@@ -18,4 +19,5 @@
       
     </div>
 }
+</div>
   </div>

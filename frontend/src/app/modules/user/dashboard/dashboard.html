@@ -31,16 +31,16 @@
     </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition duration-300 hover:scale-105 hover:bg-slate-700 hover:-translate-y-3">
+      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition duration-300 hover:scale-105 hover:bg-slate-100 hover:-translate-y-3">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Proyecto 1</h3>
         <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus sed, rerum quos eligendi iste voluptas. Magnam incidunt iste autem, tenetur nulla sint odit omnis debitis sequi, officia qui aperiam commodi earum voluptatibus.</p>
         
       </div>
-      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition duration-300 hover:scale-105 hover:bg-slate-700 hover:-translate-y-3">
+      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition duration-300 hover:scale-105 hover:bg-slate-100 hover:-translate-y-3">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Proyecto 2</h3>
         <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores asperiores et eum excepturi, molestiae, quae doloremque tempore qui nemo assumenda illum doloribus debitis culpa iste labore est dignissimos vero quam expedita cumque.</p>
       </div>
-      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition duration-300 hover:scale-105 hover:bg-slate-700 hover:-translate-y-3">
+      <div class="rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow p-5 hover:shadow-xl transition duration-300 hover:scale-105 hover:bg-slate-100 hover:-translate-y-3">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Proyecto 3</h3>
         <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, autem molestias mollitia odio eaque labore. Necessitatibus, enim! Vel aspernatur neque quos illum nihil alias ratione tempora fugiat architecto pariatur magnam, eius dolor.</p>
       </div>
@@ -65,7 +65,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Lenguajes -->
-      <div class="p-5 bg-white dark:bg-gray-800 rounded-xl hover:bg-slate-700 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1">
+      <div class="p-5 bg-white dark:bg-gray-800 rounded-xl hover:bg-slate-50 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Lenguajes</h3>
 
         <div class="flex flex-wrap gap-4">
@@ -84,7 +84,7 @@
       </div>
 
       <!-- Frameworks -->
-      <div class="p-5 bg-white dark:bg-gray-800 rounded-xl hover:bg-slate-700 shadow-lg flex flex-col justify-between h-full transition duration-300 hover:scale-105 hover:-translate-y-1">
+      <div class="p-5 bg-white dark:bg-gray-800 rounded-xl hover:bg-slate-50 shadow-lg flex flex-col justify-between h-full transition duration-300 hover:scale-105 hover:-translate-y-1">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Frameworks y Librerías</h3>
 
         <div class="flex flex-wrap gap-4">
@@ -101,7 +101,7 @@
       </div>
 
       <!-- Herramientas -->
-      <div class="p-5 bg-white dark:bg-gray-800 rounded-xl hover:bg-slate-700 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1">
+      <div class="p-5 bg-white dark:bg-gray-800 rounded-xl hover:bg-slate-50 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Herramientas</h3>
 
         <div class="flex flex-wrap gap-4">
@@ -137,7 +137,7 @@
                border border-gray-200 dark:border-gray-700
                shadow p-5 transition duration-300
                hover:shadow-xl hover:scale-105 hover:-translate-y-2
-               hover:bg-slate-700"
+               hover:bg-slate-50"
       >
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
           {{ video.title }}
@@ -152,12 +152,27 @@
           </iframe>
         </div>
 
-        <p class="text-gray-600 dark:text-gray-400 text-sm flex-grow">
+        <p class="text-black dark:text-white text-sm flex-grow">
           {{ video.description }}
         </p>
+        
+
+        
       </div>
 
+      
     </div>
+    <div class="flex justify-center mt-10">
+      <a
+        href="https://www.youtube.com/@xeyt3976"
+        target="_blank"
+        class="w-fit px-10 py-3 rounded-full bg-white text-blue-800 font-bold shadow-lg
+              hover:text-blue-400 hover:scale-105 transition"
+      >
+        Mi canal 
+      </a>
+    </div>
+
 
   </div>
 </section>
