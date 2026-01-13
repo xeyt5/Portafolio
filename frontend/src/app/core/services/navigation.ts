@@ -30,6 +30,13 @@ export class Navigation {
       type: 'link',
       icon: 'folder',
       link: '/proyectos'
+    },
+    {
+      id: 'experience',
+      title: 'Experience',
+      type: 'link',
+      icon: 'work',
+      link: '/experience'
     }
   ];
   private isOpenSubject = new BehaviorSubject<boolean>(false);

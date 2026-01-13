@@ -20,7 +20,7 @@ export class MainLayout implements OnInit{
   constructor(public navigationService: Navigation) {}
 
   ngOnInit(): void {
-    this.isSidebarOpen$ = this.navigationService.isOpen$; // ✅ nombre correcto del observable
+    this.isSidebarOpen$ = this.navigationService.isOpen$; 
   }
   
   toggleSidebar(): void {

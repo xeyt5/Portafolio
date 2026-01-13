@@ -20,6 +20,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modules/user/proyectos/proyectos').then(m => m.Proyectos)
       },
+      {
+        path: 'experience',
+        loadComponent: () =>
+          import('./modules/user/experience/experience').then(m => m.Experience)
+      }
 
     ]
   },
