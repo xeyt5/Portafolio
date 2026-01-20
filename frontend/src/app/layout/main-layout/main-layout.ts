@@ -8,22 +8,19 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-layout',
+  standalone: true,
   imports: [CommonModule, RouterOutlet, Sidebar, Header],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.css'
 })
+export class MainLayout implements OnInit {
 
-export class MainLayout implements OnInit{
   isSidebarOpen$!: Observable<boolean>;
-  currentYear: number = new Date().getFullYear();
-  
+  currentYear = new Date().getFullYear();
+
   constructor(public navigationService: Navigation) {}
 
   ngOnInit(): void {
-    this.isSidebarOpen$ = this.navigationService.isOpen$; 
-  }
-  
-  toggleSidebar(): void {
-    this.navigationService.toggleNavigation();
+    this.isSidebarOpen$ = this.navigationService.isOpen$;
   }
 }

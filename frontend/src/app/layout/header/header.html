@@ -10,10 +10,24 @@
 
     <!-- right side actions -->
      <div class="flex items-center gap-2">
+    <!--Boton para github y youtube-->
+        <div class="flex items-center gap-2">
+        <a class="flex items-center gap-2"
+            href="https://github.com/xeyt5" target="_blank">
+            <mat-icon class="text-gray-700 dark:text-white">code</mat-icon>
+        </a>
+        <a class="flex items-center gap-2"
+            href="https://www.youtube.com/@xeyt3976" target="_blank">
+            <mat-icon class="text-gray-700 dark:text-white">play_circle</mat-icon>
+        </a>
+        </div>
+
         <button mat-icon-button (click)="toggleTheme()">
         <mat-icon>
             {{ isDarkMode ? 'dark_mode' : 'light_mode' }}
         </mat-icon>
         </button>
+
      </div>
+
 </header>

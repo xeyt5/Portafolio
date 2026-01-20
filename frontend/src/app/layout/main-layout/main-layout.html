@@ -1,33 +1,34 @@
 <div class="flex h-screen overflow-hidden">
+
   <!-- Sidebar -->
   <aside
-    *ngIf="isSidebarOpen$ | async"
-    class="hidden lg:block"
+    class="fixed inset-y-0 left-0 z-40 w-64
+           transform transition-transform duration-300 ease-in-out
+           bg-slate-50 dark:bg-[#0f172a]"
+    [class.-translate-x-full]="!(isSidebarOpen$ | async)"
   >
     <app-sidebar></app-sidebar>
   </aside>
 
-  <!-- Mobile Sidebar Overlay -->
+  <!-- Overlay (mobile) -->
   <div
-    *ngIf="isSidebarOpen$ | async"
-    class="fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden"
-    (click)="toggleSidebar()"
+    class="fixed inset-0 z-30 bg-black transition-opacity duration-300 lg:hidden"
+    [class.opacity-50]="isSidebarOpen$ | async"
+    [class.opacity-0]="!(isSidebarOpen$ | async)"
+    [class.pointer-events-none]="!(isSidebarOpen$ | async)"
+    (click)="navigationService.toggleNavigation()"
   ></div>
 
-  <!-- Mobile Sidebar -->
-  <aside
-    *ngIf="isSidebarOpen$ | async"
-    class="fixed inset-y-0 left-0 z-50 lg:hidden"
+  <!-- Content -->
+  <div
+    class="flex flex-1 flex-col overflow-hidden transition-all duration-300 ease-in-out"
+    [class.lg:ml-64]="isSidebarOpen$ | async"
   >
-    <app-sidebar></app-sidebar>
-  </aside>
 
-  <!-- Main Content -->
-  <div class="flex flex-1 flex-col overflow-hidden">
-    <!-- Header -->
-    <app-header></app-header>
+    <header class="relative z-50">
+      <app-header></app-header>
+    </header>
 
-    <!-- Content -->
     <main class="flex-1 overflow-y-auto bg-gray-100 p-4 dark:bg-gray-900 md:p-6">
       <router-outlet></router-outlet>
     </main>
