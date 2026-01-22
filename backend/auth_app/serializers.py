@@ -3,17 +3,18 @@ from rest_framework import serializers
 
 
 class LoginSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField(write_only=True)
+    username = serializers.CharField()
+    password = serializers.CharField()
 
     def validate(self, data):
         user = authenticate(
-            username=data.get('email'),
+            username=data.get('username'),
             password=data.get('password')
         )
 
         if not user:
-            raise serializers.ValidationError("Invalid email or password")
+            raise serializers.ValidationError("Usuario o contraseña incorrectos")
+
         
         data['user'] = user
         return data
