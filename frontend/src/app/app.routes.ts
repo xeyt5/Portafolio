@@ -1,6 +1,13 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+
+    {
+    path: 'auth/login',
+    loadComponent: () =>
+      import('./modules/auth/login/login').then(m => m.LoginComponent)
+  },
+  
   {
     path: '',
     component: (await import('./layout/main-layout/main-layout')).MainLayout, // 👈 se carga el layout
