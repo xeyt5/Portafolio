@@ -10,7 +10,8 @@ export const routes: Routes = [
   
   {
     path: '',
-    component: (await import('./layout/main-layout/main-layout')).MainLayout, // 👈 se carga el layout
+    loadComponent: () =>
+      import('./layout/main-layout/main-layout').then(m => m.MainLayout),
     children: [
       {
         path: '',

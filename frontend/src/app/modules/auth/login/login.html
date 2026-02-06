@@ -1,31 +1,27 @@
-<div class="flex min-h-screen items-center justify-center bg-slate-100">
-  <form class="bg-white p-6 rounded-xl shadow-md w-80" (ngSubmit)="onSubmit()">
-    
-    <h2 class="text-2xl font-bold text-center mb-4">Iniciar sesión</h2>
+<div class="bg-white p-6 rounded-xl shadow-md w-80">
 
-    <input 
-      type="text"
-      placeholder="Usuario"
-      [(ngModel)]="form.username"
-      name="username"
-      class="w-full mb-3 p-2 border rounded"
-      required
-    >
+  <input
+    type="text"
+    [(ngModel)]="form.username"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Usuario"
+    class="w-full mb-3 p-2 border rounded"
+  />
 
-    <input 
-      type="password"
-      placeholder="Contraseña"
-      [(ngModel)]="form.password"
-      name="password"
-      class="w-full mb-4 p-2 border rounded"
-      required
-    >
+  <input
+    type="password"
+    [(ngModel)]="form.password"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Contraseña"
+    class="w-full mb-4 p-2 border rounded"
+  />
 
-    <button 
-      type="submit"
-      class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
-    >
-      Entrar
-    </button>
-  </form>
+  <button
+    type="button"
+    (click)="onSubmit()"
+    class="w-full bg-blue-600 text-white p-2 rounded"
+  >
+    Entrar
+  </button>
+
 </div>
