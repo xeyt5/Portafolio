@@ -1,27 +1,28 @@
 <div class="bg-white p-6 rounded-xl shadow-md w-80">
+  <form (submit)="onSubmit($event)">
 
-  <input
-    type="text"
-    [(ngModel)]="form.username"
-    [ngModelOptions]="{ standalone: true }"
-    placeholder="Usuario"
-    class="w-full mb-3 p-2 border rounded"
-  />
+    <input
+      type="text"
+      [(ngModel)]="form.username"
+      name="username"
+      placeholder="Usuario"
+      class="w-full mb-3 p-2 border rounded"
+    />
 
-  <input
-    type="password"
-    [(ngModel)]="form.password"
-    [ngModelOptions]="{ standalone: true }"
-    placeholder="Contraseña"
-    class="w-full mb-4 p-2 border rounded"
-  />
+    <input
+      type="password"
+      [(ngModel)]="form.password"
+      name="password"
+      placeholder="Contraseña"
+      class="w-full mb-4 p-2 border rounded"
+    />
 
-  <button
-    type="button"
-    (click)="onSubmit()"
-    class="w-full bg-blue-600 text-white p-2 rounded"
-  >
-    Entrar
-  </button>
+    <button
+      type="submit"
+      class="w-full bg-blue-600 text-white p-2 rounded"
+    >
+      Entrar
+    </button>
 
+  </form>
 </div>

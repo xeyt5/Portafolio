@@ -10,6 +10,7 @@ import { AuthService } from '../../../core/services/auth/auth.service';
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
+
 export class LoginComponent {
   form = {
     username: '',
@@ -21,15 +22,17 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-onSubmit(): void {
-  console.log('🔥 Angular está vivo');
-  console.log(this.form);
+  onSubmit(event: Event): void {
+    event.preventDefault(); 
+    
+    console.log('Angular está vivo y el navegador NO se recargó');
+    console.log('Datos capturados:', this.form);
 
-  this.authService.login(this.form).subscribe({
-    next: res => console.log('✅ Login OK', res),
-    error: err => console.error('❌ Login failed', err)
-  });
-}
-
-
+    this.authService.login(this.form).subscribe({
+      next: res => {
+        console.log('Login OK', res);
+      },
+      error: err => console.error('Login failed', err)
+    });
+  }
 }
