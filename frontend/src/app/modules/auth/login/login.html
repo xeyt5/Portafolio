@@ -1,28 +1,51 @@
-<div class="bg-white p-6 rounded-xl shadow-md w-80">
-  <form (submit)="onSubmit($event)">
 
-    <input
-      type="text"
-      [(ngModel)]="form.username"
-      name="username"
-      placeholder="Usuario"
-      class="w-full mb-3 p-2 border rounded"
-    />
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
 
-    <input
-      type="password"
-      [(ngModel)]="form.password"
-      name="password"
-      placeholder="Contraseña"
-      class="w-full mb-4 p-2 border rounded"
-    />
+  <div class="flex w-[850px] bg-gray-8p;e00 rounded-2xl shadow-2xl overflow-hidden">
 
-    <button
-      type="submit"
-      class="w-full bg-blue-600 text-white p-2 rounded"
-    >
-      Entrar
-    </button>
+    <div class="hidden md:flex w-1/2 relative">
+      <img 
+        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+        class="object-cover w-full h-full"
+      />
+      <div class="absolute inset-0 bg-purple-900/40"></div>
+    </div>
 
-  </form>
+    <div class="w-full md:w-1/2 p-10 text-white">
+
+      <h2 class="text-3xl font-bold mb-2">Iniciar sesión</h2>
+      <p class="text-gray-400 mb-6">Accede a tu cuenta</p>
+
+      <form (submit)="onSubmit($event)" class="space-y-4">
+
+        <input
+          type="text"
+          [(ngModel)]="form.username"
+          name="username"
+          placeholder="Usuario"
+          class="w-full p-3 bg-slate-800 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+        />
+
+        <input
+          type="password"
+          [(ngModel)]="form.password"
+          name="password"
+          placeholder="Contraseña"
+          class="w-full p-3 bg-slate-800 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+        />
+
+        <button
+          type="submit"
+          class="w-full bg-purple-600 hover:bg-purple-700 transition duration-300 p-3 rounded-lg font-semibold"
+        >
+          Iniciar sesión
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
 </div>
+

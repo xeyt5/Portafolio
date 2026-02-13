@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 export interface NavigationItem {
   id: string;
@@ -39,6 +40,41 @@ export class Navigation {
       link: '/experience'
     }
   ];
+
+
+  adminNavigationItems: NavigationItem[] = [
+    {
+      id: 'dashboard',
+      title: 'Dashboard',
+      type: 'link',
+      icon: 'dashboard',
+      link: '/dashboard'
+    },
+    {
+      id: 'proyectos',
+      title: 'proyectos',
+      type: 'link',
+      icon: 'folder',
+      link: '/proyectos'
+    },
+    {
+      id: 'experience',
+      title: 'Experience',
+      type: 'link',
+      icon: 'work',
+      link: '/experience'
+    },
+    {
+      id: 'sing_out',
+      title: 'Sing Out',
+      type: 'link',
+      icon: 'logout',
+      link: '/auth/logout'
+    },
+  ];
+
+
+
   private isOpenSubject = new BehaviorSubject<boolean>(false);
   isOpen$ = this.isOpenSubject.asObservable();
 
@@ -52,5 +88,26 @@ export class Navigation {
   getSidebarState(): boolean {
     return this.isOpenSubject.value;
   }
+
+
+  get(): Observable<NavigationItem[]> {
+
+    const isLoggedIn = !!localStorage.getItem('access_token');
+    const isAdmin = location.pathname.includes('/admin');
+
+    const navigationItems = isAdmin 
+      ? this.adminNavigationItems 
+      : this.navigationItems;
+
+    const filteredItems = navigationItems.filter(item => {
+      if (item.id === 'dashboard' && !isLoggedIn) {
+        return false; 
+      }
+      return true;
+    });
+
+    return of(filteredItems);
+  }
+
 
 }
