@@ -1,0 +1,62 @@
+<div class="bg-white dark:bg-zinc-900 text-black dark:text-white p-8 rounded-2xl shadow-2xl max-w-2xl w-full mx-auto">
+
+  <!-- Título -->
+  <h2 class="text-4xl font-bold mb-6 text-center">
+    {{ data.title }}
+  </h2>
+
+  <!-- Carrusel -->
+  <div class="relative mb-6">
+
+    <!-- Imagen -->
+    <img
+      [src]="data.images[currentIndex]"
+      class="w-full h-80 object-cover rounded-xl transition duration-300"
+    >
+
+    <!-- Botón izquierda -->
+    <button
+      (click)="prev()"
+      class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white px-4 py-2 rounded-full transition">
+      ←
+    </button>
+
+    <!-- Botón derecha -->
+    <button
+      (click)="next()"
+      class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white px-4 py-2 rounded-full transition">
+      →
+    </button>
+
+  </div>
+
+  <!-- Indicadores -->
+  <div class="flex justify-center gap-2 mb-6">
+    @for (img of data.images; track $index) {
+      <div
+        class="w-3 h-3 rounded-full transition"
+        [class.bg-blue-500]="$index === currentIndex"
+        [class.bg-gray-400]="$index !== currentIndex">
+      </div>
+    }
+  </div>
+
+  <!-- Descripción -->
+  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 text-center leading-relaxed">
+    {{ data.description }}
+  </p>
+
+  <!-- Botón -->
+  <a
+    [href]="data.link"
+    target="_blank"
+    class="block text-center bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full transition">
+    Ver proyecto
+  </a>
+    <button
+        (click)="close()"
+        class="mt-4 block text-center bg-gray-300 hover:bg-gray-400 text-gray-800 text-lg font-medium px-6 py-3 rounded-full transition">
+        Cerrar
+        </button>
+
+</div>
