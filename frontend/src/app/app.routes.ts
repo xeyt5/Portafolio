@@ -32,6 +32,11 @@ export const routes: Routes = [
         path: 'experience',
         loadComponent: () =>
           import('./modules/user/experience/experience').then(m => m.Experience)
+      },
+      {
+        path: 'social',
+        loadComponent: () =>
+          import('./modules/user/social/social').then(m => m.Social)
       }
 
     ]

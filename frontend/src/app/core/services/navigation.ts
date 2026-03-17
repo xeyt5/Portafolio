@@ -38,6 +38,13 @@ export class Navigation {
       type: 'link',
       icon: 'work',
       link: '/experience'
+    },
+    {
+      id: 'social',
+      title: 'Social',
+      type: 'link',
+      icon: 'share',
+      link: '/social'
     }
   ];
 
@@ -71,6 +78,7 @@ export class Navigation {
       icon: 'logout',
       link: '/auth/logout'
     },
+    
   ];
 
 
