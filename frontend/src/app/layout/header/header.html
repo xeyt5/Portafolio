@@ -1,4 +1,4 @@
-<header class="flex h-12 items-center justify-between border-b border-gray-200 bg-white px-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:px-6">
+<header class="flex h-12 items-center justify-between border-b border-gray-200 bg-white px-4 shadow-sm dark:border-gray-700 dark:bg-[#1e2130] md:px-6">
     <!-- toggle sidebar Button -->
     <button
         mat-icon-button
@@ -23,7 +23,7 @@
         </div>
 
         <button mat-icon-button (click)="toggleTheme()">
-        <mat-icon>
+        <mat-icon class="text-gray-700 dark:text-white">
             {{ isDarkMode ? 'dark_mode' : 'light_mode' }}
         </mat-icon>
         </button>

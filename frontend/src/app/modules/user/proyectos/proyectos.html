@@ -2,7 +2,7 @@
 <div class="max-w-6xl mx-auto px-4">
   <div class="grid gap-6 mb-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-12">
   @for (project of projects; track project) {
-    <div class="bg-gray-200 dark:bg-gray-800 rounded-2xl transition p-6 flex flex-col justify-between duration-300 hover:scale-[1.02] hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500 shadow-lg dark:shadows-zinc-900/60 hover:shadow-2xl hover:translate-y-1">
+    <div class="bg-gray-200 dark:bg-[#1e2130] rounded-2xl transition p-6 flex flex-col justify-between duration-300 hover:scale-[1.02] hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500 shadow-lg dark:shadows-zinc-900/60 hover:shadow-2xl hover:translate-y-1">
       <div>
         <img
         [src]="project.img"
@@ -12,7 +12,7 @@
         <h2 class="text-black dark:text-white text-xl font-semibold mb-2">{{ project.title }}</h2>
         <p class="text-black dark:text-white mb-4">{{ project.description }}</p>
 
-        <button (click)="openDialog(project)" class="text-white dark:text-black mt-auto  inline-block text-center bg-black dark:bg-white rounded-full px-4 py-2 hover:opacity-80  transition">
+        <button (click)="openDialog(project)" class="text-white dark:text-black font-medium mt-auto inline-block text-center bg-black dark:bg-indigo-400 rounded-full px-4 py-2 hover:opacity-80  transition hover:bg-indigo-500 dark:hover:bg-indigo-500">
             Ver proyecto
           </button>
       </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import  { RouterLink } from '@angular/router';
 import { SafeUrlPipe } from '../../../pipes/safe-url-pipe';
+import { url } from 'inspector';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { SafeUrlPipe } from '../../../pipes/safe-url-pipe';
 export class Dashboard {
   user={ 
     name:"xeyt",
-    avatar: "https://i.pravatar.cc/150?img=2" 
+    avatar: "https://i.pravatar.cc/150?img=7" 
   }
   videos = [
     {
@@ -35,6 +36,26 @@ export class Dashboard {
     }
 
   ];
-  
+
+  projects = [
+    {
+      title: 'Portafolio Personal',
+      description: 'Mi portafolio personal construido con Angular, TailwindCSS y Django. Muestra mis proyectos, habilidades y experiencia de una manera visualmente atractiva para que se mas facil para todos observar.',
+      image: 'cargando.avif',
+      url: ''
+    },
+    {
+      title: 'Blog de Tecnología',
+      description: 'Un blog de tecnología donde comparto mis conocimientos sobre Linux, programación y desarrollo web. Construido con Angular y TailwindCSS para una experiencia de usuario fluida.',
+      image: 'cargando.avif',
+      url: ''
+    },
+    {
+      title: 'Gestor de Tareas',
+      description: 'Una aplicación de gestión de tareas que me ayuda a organizar mi trabajo diario. Desarrollada con Angular para el frontend y Django para el backend donde pueden agregar diferentes tareas.',
+      image: 'cargando.avif',
+      url: ''
+    }
+  ]  
 
 }
