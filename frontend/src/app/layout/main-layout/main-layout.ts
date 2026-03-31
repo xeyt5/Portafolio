@@ -23,4 +23,5 @@ export class MainLayout implements OnInit {
   ngOnInit(): void {
     this.isSidebarOpen$ = this.navigationService.isOpen$;
   }
+  
 }

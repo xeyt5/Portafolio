@@ -1,5 +1,5 @@
 <section class="flex justify-center p-6">
-  <div class="max-w-5xl rounded-2xl bg-white dark:bg-[#1e2130] p-6 shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-6 items-center transition ease-in-out hover:shadow-xl hover:border-white transform hover:-translate-y-3 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500">
+  <div class="max-w-5xl rounded-2xl bg-white dark:bg-[#1e2130] p-6 shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-6 items-center transition ease-in-out hover:shadow-xl hover:border-white transform hover:-translate-y-2 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500">
     
     <!-- Recuadro para la foto -->
     <img 
@@ -36,7 +36,7 @@
         class="rounded-2xl bg-white dark:bg-[#1e2130] 
                border border-gray-200 dark:border-gray-700 
                shadow-lg p-5 transition duration-300 
-               hover:scale-105 hover:-translate-y-3 
+               hover:scale-105 hover:-translate-y-1 
                hover:shadow-xl hover:ring-2 
                hover:ring-blue-400 dark:hover:ring-purple-500 cursor-pointer">
 
@@ -71,7 +71,7 @@
     <div class="flex justify-center mt-8">
       <a
         routerLink="/proyectos"
-        class="inline-block bg-slate-400 dark:bg-[#818cf8] text-black font-bold px-6 py-3 rounded-full shadow hover:text-black transition duration-300 hover:scale-105 cursor-pointer"
+        class="inline-block bg-slate-400 dark:bg-[#818cf8] text-black font-bold px-6 py-3 rounded-full shadow hover:text-black transition duration-300 hover:scale-105 cursor-pointer hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500"
       >
         Mis proyectos
       </a>
@@ -88,7 +88,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Lenguajes -->
-      <div class="p-5 bg-white dark:bg-[#1e2130] rounded-xl hover:bg-slate-50 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1">
+      <div class="p-5 bg-white dark:bg-[#1e2130] rounded-xl hover:bg-slate-50 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Lenguajes</h3>
 
         <div class="flex flex-wrap gap-4">
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Frameworks -->
-      <div class="p-5 bg-white dark:bg-[#1e2130] rounded-xl hover:bg-slate-50 shadow-lg flex flex-col justify-between h-full transition duration-300 hover:scale-105 hover:-translate-y-1">
+      <div class="p-5 bg-white dark:bg-[#1e2130] rounded-xl hover:bg-slate-50 shadow-lg flex flex-col justify-between h-full transition duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Frameworks y Librerías</h3>
 
         <div class="flex flex-wrap gap-4">
@@ -124,7 +124,7 @@
       </div>
 
       <!-- Herramientas -->
-      <div class="p-5 bg-white dark:bg-[#1e2130] rounded-xl hover:bg-slate-50 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1">
+      <div class="p-5 bg-white dark:bg-[#1e2130] rounded-xl hover:bg-slate-50 shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500">
         <h3 class="text-xl font-semibold dark:text-white mb-4">Herramientas</h3>
 
         <div class="flex flex-wrap gap-4">
@@ -152,15 +152,15 @@
       Mis Videos 
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hover:cursor-default">
 
       <div
         *ngFor="let video of videos"
         class="flex flex-col h-full rounded-xl bg-white dark:bg-[#1e2130]
                border border-gray-200 dark:border-gray-700
                shadow p-5 transition duration-300
-               hover:shadow-xl hover:scale-105 hover:-translate-y-2
-               hover:bg-slate-50"
+               hover:shadow-xl hover:scale-105 hover:-translate-y-1.2
+               hover:bg-slate-50 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500"
       >
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
           {{ video.title }}
@@ -187,10 +187,10 @@
     </div>
     <div class="flex justify-center mt-10">
       <a
-        href="https://www.youtube.com/@xeyt3976"
+        href="https://www.youtube.com/@xxeyt"
         target="_blank"
         class="w-fit px-10 py-3 rounded-full bg-slate-400 dark:bg-[#818cf8] text-black font-bold shadow-lg
-              hover:text-black hover:scale-105 transition"
+              hover:text-black hover:scale-105 transition hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500"
       >
         Mi canal 
       </a>
