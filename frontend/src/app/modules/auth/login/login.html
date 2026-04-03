@@ -1,51 +1,88 @@
-
-<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
-
-  <div class="flex w-[850px] bg-gray-8p;e00 rounded-2xl shadow-2xl overflow-hidden">
+<div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-slate-900">
+  <div class="flex w-[850px] bg-white dark:bg-[#1e2130] rounded-2xl shadow-2xl overflow-hidden
+              border border-gray-200 dark:border-gray-700
+              transition duration-300 hover:ring-2 hover:ring-blue-400 dark:hover:ring-purple-500">
 
     <div class="hidden md:flex w-1/2 relative">
-      <img 
-        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+      <img
+        src="https://yt3.googleusercontent.com/4E8sujAoXtg7XfI8nx8XerNaMMLPuMVYP4eX-FeZpvBGYIVULDJ6HLsCSTbkpRkU90L49pRwgw=s900-c-k-c0x00ffffff-no-rj"
         class="object-cover w-full h-full"
       />
       <div class="absolute inset-0 bg-purple-900/40"></div>
     </div>
 
-    <div class="w-full md:w-1/2 p-10 text-white">
 
-      <h2 class="text-3xl font-bold mb-2">Iniciar sesión</h2>
-      <p class="text-gray-400 mb-6">Accede a tu cuenta</p>
+    <div class="w-full md:w-1/2 p-10">
+
+      <h2 class="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+        Iniciar sesión
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-6">
+        Accede a tu cuenta
+      </p>
+
+
+      @if (mensaje) {
+        <div class="mb-4 px-4 py-3 rounded-lg text-sm font-medium"
+             [ngClass]="{
+               'bg-green-100 text-green-800 border border-green-300': tipoMensaje === 'success',
+               'bg-red-100 text-red-800 border border-red-300':       tipoMensaje === 'error'
+             }">
+          {{ mensaje }}
+        </div>
+      }
 
       <form (submit)="onSubmit($event)" class="space-y-4">
 
+   
         <input
           type="text"
           [(ngModel)]="form.username"
           name="username"
           placeholder="Usuario"
-          class="w-full p-3 bg-slate-800 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+          [disabled]="cargando"
+          class="w-full p-3 rounded-lg
+                 bg-gray-50 dark:bg-slate-800
+                 border border-gray-200 dark:border-slate-700
+                 text-gray-900 dark:text-white
+                 placeholder-gray-400 dark:placeholder-gray-500
+                 focus:outline-none focus:ring-2
+                 focus:ring-blue-400 dark:focus:ring-purple-500
+                 transition duration-200 disabled:opacity-50"
         />
 
+    
         <input
           type="password"
           [(ngModel)]="form.password"
           name="password"
           placeholder="Contraseña"
-          class="w-full p-3 bg-slate-800 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+          [disabled]="cargando"
+          class="w-full p-3 rounded-lg
+                 bg-gray-50 dark:bg-slate-800
+                 border border-gray-200 dark:border-slate-700
+                 text-gray-900 dark:text-white
+                 placeholder-gray-400 dark:placeholder-gray-500
+                 focus:outline-none focus:ring-2
+                 focus:ring-blue-400 dark:focus:ring-purple-500
+                 transition duration-200 disabled:opacity-50"
         />
 
+    
         <button
           type="submit"
-          class="w-full bg-purple-600 hover:bg-purple-700 transition duration-300 p-3 rounded-lg font-semibold"
-        >
-          Iniciar sesión
+          [disabled]="cargando"
+          class="w-full bg-slate-400 dark:bg-[#818cf8]
+                 text-black font-bold p-3 rounded-full shadow
+                 hover:scale-105 hover:ring-2
+                 hover:ring-blue-400 dark:hover:ring-purple-500
+                 transition duration-300
+                 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
+          {{ cargando ? 'Iniciando...' : 'Iniciar sesión' }}
         </button>
 
       </form>
-
     </div>
 
   </div>
-
 </div>
-
