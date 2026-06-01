@@ -72,6 +72,13 @@ export class Navigation {
       link: '/experience'
     },
     {
+      id: 'social',
+      title: 'Social-admin',
+      type: 'link',
+      icon: 'share',
+      link: '/social'
+    },
+    {
       id: 'sing_out',
       title: 'Sing Out',
       type: 'link',

@@ -33,13 +33,7 @@ export class LoginComponent {
 
     this.authService.login(this.form).subscribe({
       next: res => {
-        this.cargando = false;
-        this.mensaje = '¡Bienvenido! Sesión iniciada correctamente.';
-        this.tipoMensaje = 'success';
-        this.cdr.detectChanges(); 
-        setTimeout(() => {
-          this.router.navigate(['/dashboard_admin']);
-        }, 1500);
+        this.router.navigate(['/dashboard_admin']);
       },
       error: err => {
         this.cargando = false;

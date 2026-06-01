@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
 
-  
+
+  //rutas del usuario
     {
     path: 'auth/login',
     loadComponent: () =>
@@ -37,12 +38,19 @@ export const routes: Routes = [
         path: 'social',
         loadComponent: () =>
           import('./modules/user/social/social').then(m => m.Social)
-      }
+      },
+      //rutas del admin
+      {
+        path: 'dashboard_admin',
+        loadComponent: () =>
+          import('./modules/admin/dashboard-admin/dashboard-admin').then(m => m.DashboardAdmin)
+      },
 
     ]
   },
   {
     path: '**',
     redirectTo: 'inicio' 
-  }
+  },
+
 ];

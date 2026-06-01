@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Theme } from './core/services/tema/theme';
+import { AuthService } from './core/services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import { Theme } from './core/services/tema/theme';
 export class App {
   protected readonly title = signal('frontend');
 
-  constructor(private themeService: Theme) {}
+  constructor(private themeService: Theme, private authService: AuthService) {}
+  ngOnInit(): void {
+    this.authService.loadSesion();
+  }
 
-  ngOnInit(): void {}
 }

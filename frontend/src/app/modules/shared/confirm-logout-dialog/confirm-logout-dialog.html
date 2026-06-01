@@ -1,0 +1,26 @@
+<div class="p-6 felx flex-col items-center gap-4">
+    <h2 class="text-lg text-white font-semibold">
+       Cerrar sesion 
+     </h2>
+    <p class="text-sm text-gray-400">
+      ¿Estás seguro de que deseas cerrar sesión?
+    </p>
+
+    <div class="flex gab-3 w-full">
+        <button (click)="cancelar()"
+        mat-stroked-button
+        color="primary"
+        class="w-full">
+        Cancelar
+        </button>
+
+        <button (click)="confirmar()"
+        mat-stroked-button
+        color="accent"
+        class="w-full">
+        cerrar sesion
+        </button>
+
+    </div>
+
+</div>
