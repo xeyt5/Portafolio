@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'auth_app',
     'corsheaders',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:4200",
 ]
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 ROOT_URLCONF = 'config.urls'

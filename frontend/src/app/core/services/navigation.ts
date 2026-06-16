@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable, of } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface NavigationItem {
   id: string;
@@ -17,7 +18,9 @@ export interface NavigationItem {
 })
 
 export class Navigation {
-  private navigationItems: NavigationItem[] = [
+  //private PlatformId: Inject(PLATFORM_ID):
+  private platformId = inject(PLATFORM_ID);
+  navigationItems: NavigationItem[] = [
     {
       id: 'dashboard',
       title: 'Dashboard',
@@ -51,40 +54,33 @@ export class Navigation {
 
   adminNavigationItems: NavigationItem[] = [
     {
-      id: 'dashboard',
-      title: 'Dashboard',
+      id: 'dashboard-admin',
+      title: 'Dashboard admin',
       type: 'link',
       icon: 'dashboard',
-      link: '/dashboard'
+      link: '/dashboard-admin'
     },
     {
-      id: 'proyectos',
-      title: 'proyectos',
+      id: 'proyectos-admin',
+      title: 'proyectos admin',
       type: 'link',
       icon: 'folder',
-      link: '/proyectos'
+      link: '/projects-admin'
     },
     {
-      id: 'experience',
-      title: 'Experience',
+      id: 'experience_admin',
+      title: 'Experience admin',
       type: 'link',
       icon: 'work',
-      link: '/experience'
+      link: '/experience-admin'
     },
     {
-      id: 'social',
+      id: 'social-admin',
       title: 'Social-admin',
       type: 'link',
       icon: 'share',
-      link: '/social'
-    },
-    {
-      id: 'sing_out',
-      title: 'Sing Out',
-      type: 'link',
-      icon: 'logout',
-      link: '/auth/logout'
-    },
+      link: '/social-admin'
+    }
     
   ];
 
@@ -104,25 +100,21 @@ export class Navigation {
     return this.isOpenSubject.value;
   }
 
-
-  get(): Observable<NavigationItem[]> {
-
-    const isLoggedIn = !!localStorage.getItem('access_token');
-    const isAdmin = location.pathname.includes('/admin');
-
-    const navigationItems = isAdmin 
-      ? this.adminNavigationItems 
-      : this.navigationItems;
-
-    const filteredItems = navigationItems.filter(item => {
-      if (item.id === 'dashboard' && !isLoggedIn) {
-        return false; 
-      }
-      return true;
-    });
-
-    return of(filteredItems);
+  get(): Observable<NavigationItem[]>{
+    if (!isPlatformBrowser(this.platformId)) {
+      return of(this.navigationItems);
+    }
+    const token = localStorage.getItem('token');
+    const userStr = localStorage.getItem('user');
+    
+    if (token && userStr) {
+      const user = JSON.parse(userStr);
+      const isAdmin = user.is_staff || user.is_superuser || user.role === 'admin';
+      
+      return of(isAdmin ? this.adminNavigationItems : this.navigationItems);
+    }
+    
+    return of(this.navigationItems);
   }
-
 
 }

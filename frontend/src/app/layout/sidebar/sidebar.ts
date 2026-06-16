@@ -24,7 +24,9 @@ export class Sidebar {
 
   constructor(private navigationService: Navigation, public authService: AuthService, private router: Router, private dialog: MatDialog) {}
   ngOnInit(): void {
-    this.navigationItems = this.navigationService.getNavigationItems();
+    this.navigationService.get().subscribe(items => {
+      this.navigationItems = items;
+    });
   }
   logout(): void {
     const dialogRef = this.dialog.open(ConfirmLogoutDialog, {

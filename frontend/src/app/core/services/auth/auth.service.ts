@@ -70,4 +70,11 @@ export class AuthService {
     return this.currentUser() 
   }
 
+  isAdmin(): boolean {
+  const userStr = localStorage.getItem('user');
+  if (!userStr) return false;
+  const user = JSON.parse(userStr);
+  return user.is_staff || user.is_superuser || user.role === 'admin';
+}
+
 }

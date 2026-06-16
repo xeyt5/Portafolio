@@ -1,1 +1,6 @@
-<p>dashboard-admin works!</p>
+@if (loading) {
+  <p>Cargando...</p>
+} @else {
+  <p>{{ dashboard?.descripcion }}</p>
+  <img [src]="dashboard?.imagen" alt="imagen dashboard" />
+}

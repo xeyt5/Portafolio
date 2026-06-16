@@ -4,9 +4,28 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+<<<<<<< HEAD
     "rootDir": "./src",
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.spec.ts"]
+=======
+    "rootDir": "src",
+    "baseUrl": "src",
+    //"ignoreDeprecations": "6.0",
+    "types": [
+      "node"
+    ],
+     "paths":{
+      "@environments/*": ["src/environments/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts"
+  ]
+>>>>>>> 30ddf8c (cambias y update en los modulos)
 }
